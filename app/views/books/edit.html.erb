@@ -1,0 +1,45 @@
+<h1>Редактировать книгу</h1>
+
+<%= form_with(model: @book, local: true) do |form| %>
+  <% if @book.errors.any? %>
+    <div class="errors">
+      <h2>Ошибки:</h2>
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, 'Название' %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :author_id, 'Автор' %>
+    <%= form.collection_select :author_id, Author.all, :id, :name %>
+  </div>
+
+  <div>
+    <%= form.label :genre_id, 'Жанр' %>
+    <%= form.collection_select :genre_id, Genre.all, :id, :name %>
+  </div>
+
+  <div>
+    <%= form.label :year, 'Год издания' %>
+    <%= form.number_field :year %>
+  </div>
+
+  <div>
+    <%= form.label :description, 'Описание' %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.submit 'Обновить' %>
+  </div>
+<% end %>
+
+<%= link_to 'Назад к списку', books_path %>

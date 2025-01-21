@@ -1,0 +1,6 @@
+<h1><%= @genre.name %></h1>
+
+<p><strong>Описание:</strong> <%= @genre.description %></p>
+
+<%= link_to 'Редактировать', edit_genre_path(@genre), class: 'btn-edit' %>
+<%= link_to 'Назад к списку', genres_path, class: 'btn-back' %>

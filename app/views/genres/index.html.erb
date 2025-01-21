@@ -1,0 +1,26 @@
+<h1>Список жанров</h1>
+
+<%= link_to 'Добавить жанр', new_genre_path, class: 'button' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Описание</th>
+      <th>Действия</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @genres.each do |genre| %>
+      <tr>
+        <td><%= genre.name %></td>
+        <td><%= truncate(genre.description, length: 50) %></td>
+        <td>
+          <%= link_to 'Показать', genre_path(genre) %> |
+          <%= link_to 'Редактировать', edit_genre_path(genre) %> |
+          <%= link_to 'Удалить', genre_path(genre), method: :delete, data: { confirm: 'Вы уверены?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

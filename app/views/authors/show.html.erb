@@ -1,0 +1,7 @@
+<h1><%= @author.name %></h1>
+
+<p><strong>Дата рождения:</strong> <%= @author.birth_date %></p>
+<p><strong>Биография:</strong> <%= @author.bio %></p>
+
+<%= link_to 'Редактировать', edit_author_path(@author), class: 'btn-edit' %>
+<%= link_to 'Назад к списку', authors_path, class: 'btn-back' %>

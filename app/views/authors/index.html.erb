@@ -1,0 +1,28 @@
+<h1>Список авторов</h1>
+
+<%= link_to 'Добавить автора', new_author_path, class: 'button' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Имя</th>
+      <th>Дата рождения</th>
+      <th>Биография</th>
+      <th>Действия</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @authors.each do |author| %>
+      <tr>
+        <td><%= author.name %></td>
+        <td><%= author.birth_date %></td>
+        <td><%= truncate(author.bio, length: 50) %></td>
+        <td>
+          <%= link_to 'Показать', author_path(author), class: 'btn-show' %>
+          <%= link_to 'Редактировать', edit_author_path(author), class: 'btn-edit' %>
+          <%= link_to 'Удалить', author_path(author), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn-delete' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
