@@ -290,3 +290,55 @@ main {
     background: linear-gradient(135deg, #c82333, #dc3545); /* Инвертированный градиент */
     transform: translateY(-2px);
 }
+
+/* Стили для контейнера ошибки */
+.error-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+.error-container h1 {
+    font-size: 24px;
+    color: #dc3545;
+    /* Красный цвет для заголовка ошибки */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.error-container p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.error-image{
+    width:350px;
+    height: 350px;
+}
+
+/* Стили для кнопки "Попробовать снова" */
+.error-container .btn-retry {
+    display: inline-block;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.error-container .btn-retry:hover {
+    background: linear-gradient(135deg, #0056b3, #007bff);
+    transform: translateY(-2px);
+}
+

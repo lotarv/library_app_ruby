@@ -2,5 +2,21 @@
 
 <p><strong>Описание:</strong> <%= @genre.description %></p>
 
+<h2>Все книги данного жанра</h2>
+<% if @genre.books.any?%>
+    <ul>
+        <% @genre.books.each do |book|%>
+        <li>
+            <%=link_to book.title, book_path(book)%>
+            (<%=book.year%>)
+            <%= "Автор: "%>
+            <%=link_to book.author.name, author_path(book.author)%>
+        </li>
+        <%end%>
+    </ul>
+<%else%>
+    <p>Книги данного жанра отсутствуют в нашей базе</p>
+<%end%>
+
 <%= link_to 'Редактировать', edit_genre_path(@genre), class: 'btn-edit' %>
 <%= link_to 'Назад к списку', genres_path, class: 'btn-back' %>

@@ -5,6 +5,14 @@ ru:
         name: "Имя"
         birth_date: "Дата рождения"
         bio: "Биография"
+      book:
+        title: "Название"
+        description: "Описание"
+        year: "Год издания"
+        author: "Автор"
+        genre: "Жанр"
+      genre:
+        name: "Название жанра"
     errors:
       models:
         author:
@@ -16,3 +24,32 @@ ru:
               blank: "не может быть пустой"
             bio:
               blank: "не может быть пустой"
+        book:
+          attributes:
+            title:
+              blank: "не может быть пустым"
+            year:
+              not_a_number: "должен быть числом"
+              greater_than: "должен быть больше %{count}"
+            author:
+              required: "не указан"
+            genre:
+              required: "не указан"
+        genre:
+          attributes:
+            name:
+              blank: "не может быть пустым"
+  authors:
+    create:
+      notice: "Автор успешно создан!"
+    update:
+      notice: "Автор успешно обновлён!"
+    destroy:
+      notice: "Автор успешно удалён!"
+  books:
+    create:
+      notice: "Книга успешно добавлена!"
+    update:
+      notice: "Книга успешно обновлена!"
+    destroy:
+      notice: "Книга удалена!"

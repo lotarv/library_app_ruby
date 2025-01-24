@@ -3,5 +3,19 @@
 <p><strong>Дата рождения:</strong> <%= @author.birth_date %></p>
 <p><strong>Биография:</strong> <%= @author.bio %></p>
 
+<h2>Все книги данного автора</h2>
+<% if @author.books.any?%>
+<ul>
+    <% @author.books.each do |book| %>
+    <li>
+        <%= link_to book.title,  book_path(book)%>
+        (<%= book.year%>)
+    </li>
+    <% end %>
+</ul>
+<%else%>
+    <p>Книги данного автора отсутствуют в нашей базе</p>
+<% end %>
+
 <%= link_to 'Редактировать', edit_author_path(@author), class: 'btn-edit' %>
 <%= link_to 'Назад к списку', authors_path, class: 'btn-back' %>
