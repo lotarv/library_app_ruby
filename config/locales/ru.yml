@@ -2,7 +2,7 @@ ru:
   activerecord:
     attributes:
       author:
-        name: "Имя"
+        name: "Имя автора"
         birth_date: "Дата рождения"
         bio: "Биография"
       book:
@@ -20,6 +20,7 @@ ru:
             name:
               blank: "не может быть пустым"
               too_short: "слишком короткое (минимум %{count} символов)"
+              taken: "уже имеется в базе"
             birth_date:
               blank: "не может быть пустой"
             bio:
@@ -33,12 +34,14 @@ ru:
               greater_than: "должен быть больше %{count}"
             author:
               required: "не указан"
+              taken: "уже привязан к этой книге"
             genre:
               required: "не указан"
         genre:
           attributes:
             name:
               blank: "не может быть пустым"
+              taken: "уже есть в базе"
   authors:
     create:
       notice: "Автор успешно создан!"
