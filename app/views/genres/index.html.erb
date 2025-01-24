@@ -16,9 +16,9 @@
         <td><%= genre.name %></td>
         <td><%= truncate(genre.description, length: 50) %></td>
         <td>
-          <%= link_to 'Показать', genre_path(genre) %> |
-          <%= link_to 'Редактировать', edit_genre_path(genre) %> |
-          <%= link_to 'Удалить', genre_path(genre), method: :delete, data: { confirm: 'Вы уверены?' } %>
+          <%= link_to 'Показать', genre_path(genre), class:'btn-show' %> 
+          <%= link_to 'Редактировать', edit_genre_path(genre), class:'btn-edit' %> 
+          <%= link_to 'Удалить', genre_path(genre), method: :delete, data: { confirm: 'Вы уверены?' }, class:'btn-delete' %>
         </td>
       </tr>
     <% end %>
