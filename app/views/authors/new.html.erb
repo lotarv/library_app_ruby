@@ -5,7 +5,7 @@
     <div class="errors">
       <h2>Ошибки:</h2>
       <ul>
-        <% author.errors.full_messages.each do |message| %>
+        <% @author.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -31,5 +31,3 @@
     <%= form.submit 'Сохранить' %>
   </div>
 <% end %>
-
-<%= link_to 'Назад к списку', authors_path %>

@@ -1,0 +1,18 @@
+ru:
+  activerecord:
+    attributes:
+      author:
+        name: "Имя"
+        birth_date: "Дата рождения"
+        bio: "Биография"
+    errors:
+      models:
+        author:
+          attributes:
+            name:
+              blank: "не может быть пустым"
+              too_short: "слишком короткое (минимум %{count} символов)"
+            birth_date:
+              blank: "не может быть пустой"
+            bio:
+              blank: "не может быть пустой"
